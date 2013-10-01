@@ -82,6 +82,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "app1" do |app1|
     app1.vm.hostname = "app1"
     app1.vm.provision :shell, :inline => $script_app
+    app1.vm.network "forwarded_port", guest: 22,   host: 30022
     app1.vm.network "forwarded_port", guest: 8080, host: 38080
     app1.vm.provider "virtualbox" do |vm|
       vm.customize [
@@ -94,6 +95,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "app2" do |app2|
     app2.vm.hostname = "app2"
     app2.vm.provision :shell, :inline => $script_app
+    app2.vm.network "forwarded_port", guest: 22,   host: 40022
     app2.vm.network "forwarded_port", guest: 8080, host: 48080
     app2.vm.provider "virtualbox" do |vm|
       vm.customize [
