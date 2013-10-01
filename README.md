@@ -1,2 +1,2 @@
-sourcetalk-env1
+sourcetalk-env
 ==============
