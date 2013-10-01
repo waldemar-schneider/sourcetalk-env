@@ -1,2 +1,2 @@
-srcetalk-env
+sourcetalk-env
 ==============
