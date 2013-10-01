@@ -28,7 +28,7 @@ echo "server {                       " >> /etc/nginx/sites-available/default
 echo "  listen 80;                   " >> /etc/nginx/sites-available/default
 echo "                               " >> /etc/nginx/sites-available/default
 echo "  location / {                 " >> /etc/nginx/sites-available/default
-echo "    proxy_pass http://myCloud  " >> /etc/nginx/sites-available/default
+echo "    proxy_pass http://myCloud; " >> /etc/nginx/sites-available/default
 echo "  }                            " >> /etc/nginx/sites-available/default
 echo "}                              " >> /etc/nginx/sites-available/default
 service nginx restart
