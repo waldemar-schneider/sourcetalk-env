@@ -1,4 +1,2 @@
 sourcetalk-env
 ==============
-TEST...
-OK
