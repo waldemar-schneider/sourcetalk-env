@@ -25,7 +25,7 @@ echo "  server 10.0.2.2:48080;       " >> /etc/nginx/sites-available/default
 echo "}                              " >> /etc/nginx/sites-available/default
 echo "                               " >> /etc/nginx/sites-available/default
 echo "server {                       " >> /etc/nginx/sites-available/default
-echo "  listen 80;                   " >> /etc/nginx/sites-available/default
+echo "  listen 20080;                " >> /etc/nginx/sites-available/default
 echo "                               " >> /etc/nginx/sites-available/default
 echo "  location / {                 " >> /etc/nginx/sites-available/default
 echo "    proxy_pass http://myCloud; " >> /etc/nginx/sites-available/default
@@ -70,7 +70,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "lb" do |lb|
     lb.vm.hostname = "lb"
     lb.vm.provision :shell, :inline => $script_lb
-    lb.vm.network "forwarded_port", guest: 80, host: 20080
+    lb.vm.network "forwarded_port", guest: 20080, host: 20080
     lb.vm.provider "virtualbox" do |vm|
       vm.customize [
                      'modifyvm', :id,
