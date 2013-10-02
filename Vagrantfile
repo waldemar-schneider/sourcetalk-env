@@ -5,13 +5,6 @@ $script_ci = <<SCRIPT
 echo Provisioning VM...
 echo Installing dependencies...
 apt-get -qy install git openjdk-7-jdk unzip
-
-#echo Installing webapps...
-#chmod 777 /usr/share/tomcat7
-#wget -q -O /var/lib/tomcat7/webapps/jenkins.war http://mirrors.jenkins-ci.org/war/latest/jenkins.war
-#wget -q -O /var/lib/tomcat7/webapps/nexus.war http://www.sonatype.org/downloads/nexus-latest.war
-#service tomcat7 restart
-
 echo Done.
 SCRIPT
 
@@ -21,7 +14,7 @@ echo Installing dependencies...
 apt-get -qy install nginx
 echo "upstream myCloud {             " >  /etc/nginx/sites-available/default
 echo "  server 10.0.2.2:38080;       " >> /etc/nginx/sites-available/default
-echo "  server 10.0.2.2:48080;       " >> /etc/nginx/sites-available/default
+echo " #server 10.0.2.2:48080;       " >> /etc/nginx/sites-available/default
 echo "}                              " >> /etc/nginx/sites-available/default
 echo "                               " >> /etc/nginx/sites-available/default
 echo "server {                       " >> /etc/nginx/sites-available/default
