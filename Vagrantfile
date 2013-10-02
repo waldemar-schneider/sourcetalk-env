@@ -38,7 +38,7 @@ SCRIPT
 $script_db = <<SCRIPT
 echo Provisioning VM...
 echo Installing dependencies...
-apt-get -qy install openjdk-7-jre-headless
+apt-get -qy install openjdk-7-jre-headless unzip
 echo Done.
 SCRIPT
 
